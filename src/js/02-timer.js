@@ -5,7 +5,7 @@ const textDays = document.querySelector("[data-days]")
 const textHours = document.querySelector("[data-hours]")
 const textMinutes = document.querySelector("[data-minutes")
 const textSeconds = document.querySelector("[data-seconds]")
-
+btnStart.setAttribute("disabled", "")
 function convertMs(ms) {
     // Number of milliseconds per unit of time
     const second = 1000;
@@ -36,6 +36,7 @@ const options = {
       if(selectedDates[0] < date.getTime()){
         window.alert("Please choose a date in the future")
       } else {
+        btnStart.removeAttribute("disabled")
         btnStart.addEventListener("click", () => {
             const id = setInterval(() => {
             date = new Date()

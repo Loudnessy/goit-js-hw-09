@@ -8,11 +8,12 @@ const randomColor = function () {
   let timerId
 function onStart (evt) {
 timerId = setInterval(() => body.style.backgroundColor = randomColor(), 1000);
-btnStart.removeEventListener("click", onStart)
+btnStart.setAttribute("disabled", "")
 }
 btnStop.addEventListener("click", onStop)
 function onStop () {
-btnStart.addEventListener("click", onStart)
+  btnStart.removeAttribute("disabled")
 clearInterval(timerId)
 }
+console.log("Siu");
 
