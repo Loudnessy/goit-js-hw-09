@@ -55,6 +55,13 @@ textDays.textContent =  addLeadingZero(daysBeforeRender)
 textHours.textContent = addLeadingZero(hoursBeforeRender)
 textMinutes.textContent = addLeadingZero(minutesBeforeRender)
 textSeconds.textContent = addLeadingZero(secondsBeforeRender)
+if (date >= future) {
+  clearInterval(id); 
+  textDays.textContent = "00";
+  textHours.textContent = "00";
+  textMinutes.textContent = "00";
+  textSeconds.textContent = "00";
+}
 
    }, 1000)
         })
